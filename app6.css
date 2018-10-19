@@ -1,0 +1,15 @@
+body{
+		background: url(https://images.unsplash.com/photo-1460572894071-bde5697f7197?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0680b44a0d2a26c1147bada4d1727719&auto=format&fit=crop&w=1053&q=80); 
+		background-size: cover;
+    	background-position: center;
+
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poiret One', cursive;
+    color: white;
+    font-size: 3em;
+    font-weight: 600;
+}

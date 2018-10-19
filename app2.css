@@ -1,0 +1,13 @@
+body {
+    background: url(https://images.unsplash.com/photo-1516978101789-720eacb59e79?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5c1892964442a7914775e3b797e4681&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Luckiest Guy', cursive;
+    color: black;
+    font-size: 2em;
+}
