@@ -53,7 +53,7 @@ if (Input::exists()) {
 				Redirect::to('welcome.php');
 			}
 			else{
-				echo '<p>Sorry, logging in failed.</p>';
+				echo '<h5 class="alert alert-danger myalert">'.'User not found! Check details..'.'</h5>';
 			}
 		}
 		else{
