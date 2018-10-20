@@ -1,3 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<style type="text/css">
+	input[type='text'],input[type='password']{
+		width: 50%;
+	}
+
+	.myform{
+		width: 80%;
+		max-width: 100%;
+		margin: 0 10% 0 10%;
+		padding: 2rem;
+		font-family: monospace;
+	}
+	.myalert{
+		text-align: center;
+		width: 50%;
+		margin: 0 25% 0 25%;
+	}
+	.myalert:first-child{
+		margin-top: 60px;
+	}
+	.myalert:last-child{
+		margin-bottom: 10px;
+	}
+</style>
+
 <?php
 require_once 'core/init.php';
 
@@ -24,21 +57,15 @@ if (Input::exists()) {
 			}
 		}
 		else{
-			foreach ($validation->errors() as $error){
-				echo $error, '<br>';
+			foreach ($validation->errors() as $error)
+			{
+				
+				echo '<h5 class="alert alert-danger myalert">'.$error.'</h5>';
 			}
 		}
 	}
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
 
 <body>
  <nav class="navbar navbar-default navbar-fixed-top">
@@ -54,7 +81,7 @@ if (Input::exists()) {
     </div>
     <div id="navbar" class="collapse navbar-collapse" >
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li ><a href="/ip-project">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -65,26 +92,22 @@ if (Input::exists()) {
     </div>
   </div>
  </nav>
-<main style="margin-top: 60px;" class="container">
-	<form action="" method="post" >
-		<br class="field">
-			<label for="username">Username: </label>
-			<input type="text" name="username" placeholder="your username" id="username" autocomplete="off">
-		</br>
 
-		<br class="field">
-			<label for="password">Password: </label>
-			<input type="password" name="password" placeholder="your password" id="password" autocomplete="off">
-		</br>
+ <main style="margin-top: 60px;" class="container">
+ 	<h2 class="alert alert-info">Login</h2>
 
-		<br class="field">
-			<label for="remember">
-				<input type="checkbox" name="remember" id="remember"> Remember me
-			</label>
-		</br>	
+	<form action="" method="post" class="form-group myform">
 
-		<input type="hidden" name="token" value="<?php echo Token::generate();?>">
-		<input type="submit" value="Log in">
+		<label for="username">Username: </label>
+		<input  class="form-control" type="text" name="username"  value="<?php echo escape(Input::get('username'));?>" autocomplete="off" />
+
+		<label for="password">Enter Your Password: </label>
+		<input class="form-control" type="password" name="password" >
+	
+		<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+
+		<input type="submit" class="btn btn-info" value="Register">
+
 	</form>
 </main>
 

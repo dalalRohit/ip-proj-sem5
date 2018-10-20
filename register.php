@@ -1,4 +1,38 @@
- <?php
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<style type="text/css">
+	input[type='text'],input[type='password']{
+		width: 50%;
+	}
+
+	.myform{
+		width: 80%;
+		max-width: 100%;
+		margin: 0 10% 0 10%;
+		padding: 2rem;
+		font-family: monospace;
+	}
+	.myalert{
+		text-align: center;
+		width: 50%;
+		margin: 0 25% 0 25%;
+	}
+	.myalert:first-child{
+		margin-top: 60px;
+	}
+	.myalert:last-child{
+		margin-bottom: 10px;
+	}
+</style>
+
+<?php
 require_once 'core/init.php';
 
 if(Input::exists()){
@@ -26,7 +60,8 @@ if(Input::exists()){
 				)
 			));
 
-		if($validation->passed()){
+		if($validation->passed())
+		{
 			$user = new User();
 			$salt = Hash::salt(32);
 			
@@ -46,9 +81,11 @@ if(Input::exists()){
 				die($e->getMessage());
 			}
 		}
-		else{
-			foreach ($validation->errors() as $error){
-				echo $error, '<br>';
+		else
+		{
+			foreach ($validation->errors() as $error)
+			{
+				echo '<h5 class="alert alert-danger myalert">'.$error.'</h5>';
 			}
 		}
 	}
@@ -56,16 +93,10 @@ if(Input::exists()){
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Register</title>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-</head>
 <body>
-	 <nav class="navbar navbar-default navbar-fixed-top">
+
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -78,7 +109,7 @@ if(Input::exists()){
     </div>
     <div id="navbar" class="collapse navbar-collapse" >
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li ><a href="/ip-project">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -89,33 +120,30 @@ if(Input::exists()){
     </div>
   </div>
  </nav>
- <main style="margin-top: 60px;" class="container">
-	<form action="" method="post">
 
-	<br class="field">
+ <main style="margin-top: 40px;" class="container">
+ 	<h2 class="alert alert-info">Register User</h2>
+
+	<form action="" method="post" class="form-group myform">
+
 		<label for="username">Username: </label>
-		<input type="text" name="username" placeholder="username" id="username" value="<?php echo escape(Input::get('username'));?>" autocomplete="off">
-	</br>
+		<input  class="form-control" type="text" name="username"  value="<?php echo escape(Input::get('username'));?>" autocomplete="off" />
 
-	<br class="field">
 		<label for="password">Enter Your Password: </label>
-		<input type="password" name="password" placeholder="password">
-	</br>
+		<input class="form-control" type="password" name="password" >
 
-	<br class="field">
 		<label for="password_again">Confirm Your Password Again: </label>
-		<input type="password" name="password_again" placeholder="password_again">
-	</br>
+		<input  class="form-control" type="password" name="password_again">
 
-	<br class="field">
 		<label for="name">Your Name: </label>
-		<input type="text" name="name" placeholder="fname,lname" value="<?php echo escape(Input::get('name'));?>">
-	</br>
+		<input class="form-control" type="text" name="name" value="<?php echo escape(Input::get('name'));?>">
 	
 
-	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-	<input type="submit" value="Register">
+		<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+		<input type="submit" class="btn btn-info" value="Register">
+
 	</form>
 </main>
+
 </body>
 </html>
