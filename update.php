@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Update</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -33,7 +36,7 @@ if(Input::exists()){
 			
 			try{
 				$user->update(array(
-					'name' => Input::get('name')
+					'username' => Input::get('username')
 				));
 
 				Session::flash('home', 'Your details have been updated');
@@ -54,11 +57,24 @@ if(Input::exists()){
 ?>
 
 <form action="" method="post">
-	<div class="field">
-		<label for="name">Update The Name To: </label>
-		<input type="text" name="name" value="<?php echo escape($user->data()->name);?>">
+	<div class="container">
+
+	<form action="" method="post" class="form-group myform">
+		<label for="username">Update The username To: </label>
+		<input type="text" name="username" class="form-control" 
+			value="<?php echo escape($user->data()->username); ?>" >
+
+		<br>
+
+		<label for="password">Update The Password To: </label>
+		<input type="password" class="form-control" name="password">
+
+		<input type="submit" class="btn btn-info" value="Update">
+
+		<input type="hidden" name="token" value="<?php echo Token::generate();?>">
+
+	</form>
+
 	</div>
 
-	<input type="submit" value="Update">
-	<input type="hidden" name="token" value="<?php echo Token::generate();?>">
 </form>

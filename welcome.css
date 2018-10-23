@@ -1,0 +1,32 @@
+	.main-posts {
+		display: flex;
+		flex-direction: column;
+		width: 75%;
+		margin: 0 12.5% 0 12.5%;
+		max-width: 100%;
+		background-color:#eee0e0;
+		font-family: monospace;
+		padding: 1.2em;
+		font-size: 1.9rem;
+	}
+	li {
+		list-style-type: none;
+	}
+	.post{
+		padding: 1.5rem;
+	}
+	#innerId{
+		border-bottom: 1px dotted purple;
+	}
+	#userIdPost{
+		font-size: 1.4em;
+	}
+
+	/*MEDIA QUERIES*/
+	@media(max-width: 700px)
+	{
+		.main-posts{
+			width: 100%;
+			margin: 0px auto;
+		}
+	}

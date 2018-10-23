@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Our Project</title>
+	<title>About</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" type="text/css" href="about.css">
 </head>
 
 <body>
@@ -25,8 +24,8 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse" >
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="about.php">About</a></li>
+        <li><a href="/ip-project/">Home</a></li>
+        <li><a href="#">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href='register.php'>Signup <i class="fa fa-user-plus"></i></a></li>
@@ -36,26 +35,49 @@
   </div>
  </nav>
 
- <div class="container mainBody" style="margin-top: 60px;">
-        <div class="content">
-            <h1 class="">Microblogging website</h1>
-            <h3>Sem 5 Internet Programming Project</h3>
+<div class="container mainBody" style="margin-top: 60px;">
+        <h2>Project Members</h2>
+        <div class="members">
 
+          <div class="card" >
+              <img class="card-img-top" src="./assets/me.png" width="250px" height="250px" alt="Card image cap">
+              <h2>Rohit Dalal</h2>
+              <div class="card-body">
+                <h5 class="card-title">Member 1</h5>
+                <li>16101B0035</li>
+                <a href="https://twitter.com/dalal__rohit" target="_blank" class="btn btn-primary">Social</a>
+              </div>
+          </div>
+
+        
+
+        <div class="card">
+          <img class="card-img-top" src="./assets/amey.jpeg" width="250px" height="250px" alt="Card image cap">
+          <h2>Amey Morje</h2>
+          <div class="card-body">
+            <h5 class="card-title">Member 2</h5>
+                <li>16101B0034</li>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
 
-        <section class="desc" style="margin:10% 10%; ">
-            This is a simple micro-blogging website which is built using Bootstrap,Js,Ajax.
-            This website will simply allow you to register yourself with <b>username</b> & <b>password</b>. <br>
-            Once registered,you can login via credentials and then you'll see sample posts as you
-             see on Twitter! <br>
-             The posts displayed are fetched from a sample API and using a Templating engine (Mustache) we are displaying it using some styling <b> without writing HTML code multiple times!</b>
-        </section>
- </div>
+        <div class="card" >
+           <img class="card-img-top" src="./assets/shubham.jpeg" width="250px" height="250px" alt="Card image cap">
+              <h2>Shubham Ambavane</h2>
+              <div class="card-body">
+                <h5 class="card-title">Member 3</h5>
+                <li>16101B0022</li>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+        </div>
+
+      </div>
+</div>
+
 
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 </body>
-
 </html>
